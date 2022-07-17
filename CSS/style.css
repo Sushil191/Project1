@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.container {
+  display: grid;
+  gap: 0.3rem;
+  height: 100vh;
+  grid-template-columns: 1fr 2fr 1fr 2fr;
+  grid-template-rows: 0.3fr 1.5fr 2fr 0.2fr;
+  grid-template-areas:
+    "navigation navigation navigation navigation"
+    "sidebar Main Main Main"
+    "sidebar content-1 content-2 content-2"
+    "footer footer footer footer";
+}
+#navigation {
+  background-color: rgb(12, 9, 9);
+  grid-area: navigation;
+  color: white;
+}
+#sidebar {
+  background-color: rgb(59, 51, 51);
+  grid-area: sidebar;
+  color: white;
+}
+#Main {
+  background-color: rgb(66, 75, 128);
+  grid-area: Main;
+}
+
+#content-1 {
+  background-color: rgb(6, 196, 92);
+  grid-area: content-1;
+}
+#content-2 {
+  background-color: rgb(233, 40, 98);
+  grid-area: content-2;
+}
+#footer {
+  background-color: rgb(221, 255, 0);
+  grid-area: footer;
+}
+/* Variables */
+:root {
+  --main-padding: 5px;
+  --main-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 0.3fr 1fr 0.8fr 0.8fr 0.3fr;
+    grid-template-areas:
+      "navigation "
+      " Main"
+      "sidebar"
+      "content-1"
+      "content-2"
+      "footer";
+  }
+
+  #navigation {
+    background-color: red;
+    grid-area: navigation;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+  }
+  #sidebar {
+    background-color: rgb(59, 51, 51);
+    grid-area: sidebar;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+  }
+  #Main {
+    background-color: rgb(66, 75, 128);
+    grid-area: Main;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+  }
+
+  #content-1 {
+    background-color: rgb(6, 196, 92);
+    grid-area: content-1;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+  }
+  #content-2 {
+    background-color: rgb(233, 40, 98);
+    grid-area: content-2;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+  }
+  #footer {
+    background-color: rgb(221, 255, 0);
+    grid-area: footer;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+  }
+}
+.center {
+  text-align: center;
+}
+.h-primary {
+  font-size: 2.2rem;
+}
+.h-secondary {
+  font-size: 1.2rem;
+}
